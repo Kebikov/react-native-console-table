@@ -5,6 +5,7 @@
 
 
 
+
 >This package is designed to display an array of objects (with the same interface) as a table in the terminal.
 
 ## 🗃️ Installation
