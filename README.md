@@ -28,6 +28,8 @@ const dataMock: {name: string, age: number, country: string, job: string}[] = [
 ];
 
 consoleTable(dataMock);
+or
+consoleTable(dataMock, {...Props settings});
 ```
 ## Props settings
 
@@ -37,31 +39,34 @@ consoleTable(dataMock);
 | isShowLine | boolean | Table with or without data separation lines. |
 | sing | string / literal | Icon selection for the table |
 
+>By default, without a settings object.
 
 ```typescript
 consoleTable(dataMock);
-// By default, without a settings object.
 ```
 
 <img src="./img/1.jpg" alt="Описание изображения" width="400" >
 
+>Table display with highlighted header.
+
 ```typescript
 consoleTable(dataMock, {selectionType: 'background_magenta'});
-// Table display with highlighted header.
 ```
 
 <img src="./img/2.JPG" alt="Описание изображения" width="400" >
 
+>Table display with highlighted header and data separation lines.
+
 ```typescript
 consoleTable(dataMock, {selectionType: 'background_magenta', isShowLine: true});
-// Table display with highlighted header and data separation lines.
 ```
 
 <img src="./img/3.JPG" alt="Описание изображения" width="400" >
 
+>Table display with yellow headers, data separation lines, and an icon.
+
 ```typescript
 consoleTable(dataMock, {selectionType: 'text_yellow', isShowLine: true, sing: 'rocket'});
-// Table display with yellow headers, data separation lines, and an icon.
 ```
 
 <img src="./img/4.JPG" alt="Описание изображения" width="400" >
