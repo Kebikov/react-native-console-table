@@ -1,0 +1,19 @@
+{
+  "name": "react-native-console-table",
+  "version": "0.1.0",
+  "description": "Display an array of objects (with the same interface) as a table in the terminal.",
+  "main": "index.ts",
+  "types": "index.d.ts",
+  "keywords": [
+    "react-native-console",
+    "react-native-console-table",
+    "console-table",
+    "console-log",
+    "print-table",
+    "node-table-printing"
+  ],
+  "author": "Kebikov Yauhen",
+  "homepage": "https://github.com/Kebikov/react-native-console-table",
+  "repository": "https://github.com/Kebikov/react-native-console-table",
+  "license": "ISC"
+}
