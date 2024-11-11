@@ -1,5 +1,10 @@
 # react-native-console-table
 
+![NPM Version](https://img.shields.io/npm/v/react-native-console-table?color=%233d82c9)
+![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/react-native-console-table)
+
+
+
 >This package is designed to display an array of objects (with the same interface) as a table in the terminal.
 
 ## 🗃️ Installation
@@ -7,9 +12,8 @@
 
 ### 📖 Usage
 
-📌 For correct table border display, ensure that a monospaced font is set for the terminal.
-
-🛠️ You can do this in VSCode: `File > Preferences > Settings > Font Family` enter `'Courier New', monospace'`.
+>⚠️ For correct table border display, ensure that a monospaced font is set for the terminal.\
+>You can do this in VSCode: `File > Preferences > Settings > Font Family` enter `'Courier New', monospace'`.
 
 ```typescript
 import { consoleTable } from 'react-native-console-table';
@@ -38,7 +42,7 @@ consoleTable(dataMock);
 // By default, without a settings object.
 ```
 
-<img src="./img/1.JPG" alt="Описание изображения" width="400" >
+<img src="./img/1.jpg" alt="Описание изображения" width="400" >
 
 ```typescript
 consoleTable(dataMock, {selectionType: 'background_magenta'});
