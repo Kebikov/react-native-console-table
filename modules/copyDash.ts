@@ -13,6 +13,7 @@ export function copyDash(
     dashUp: string;
     dashCenter: string;
     dashBottom: string;
+    dashIfExistTitle: string;
 } {
 
     const getDash = (option: IDashOption) => {
@@ -47,6 +48,7 @@ export function copyDash(
     return {
         dashUp: getDash({start: lines.angleTopLeft, gaps: lines.connectionTop, end: lines.angleTopRight}),
         dashCenter: getDash({start: lines.connectionLeft, gaps: lines.connectionCross, end: lines.connectionRight}),
-        dashBottom: getDash({start: lines.angleBottomLeft, gaps: lines.connectionBottom, end: lines.angleBottomRight})
+        dashBottom: getDash({start: lines.angleBottomLeft, gaps: lines.connectionBottom, end: lines.angleBottomRight}),
+        dashIfExistTitle: getDash({start: lines.connectionLeft, gaps: lines.connectionTop, end: lines.connectionRight})
     };
 }

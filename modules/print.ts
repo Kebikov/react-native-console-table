@@ -1,6 +1,7 @@
 import { formationLine } from './formationLine';
 import { IPrint } from '../types';
 import { signObj } from './dataForTable';
+import { formationTitle } from './formationTitle';
 
 
 
@@ -12,14 +13,26 @@ export const print = (
 ) => {
 
     let sign: string = 
-        data?.options?.sing ? 
-        signObj[data.options.sing] 
+        data?.options?.sing ? signObj[data.options.sing] 
         : 
         '';
 
     const headerLine = data?.options?.sing ? data.dashUp.slice(2) : data.dashUp;
+    
 
-    console.log(sign + headerLine); // верхняя линия
+    //* Если, есть Title, показываем его.
+    const titleObj = formationTitle(data.dashCenter, data.options);
+
+    if(titleObj && titleObj.title && titleObj.dashTitle) {
+        const headerTitle = data?.options?.sing ? titleObj.dashTitle.slice(2) : titleObj.dashTitle;
+
+        console.log(sign + headerTitle); // верхняя линия Title
+        console.log(titleObj.title); // Title
+        console.log(data.dashIfExistTitle); // линия, если есть Title
+    } else {
+        console.log(sign + headerLine); // верхняя линия
+    }
+
     console.log(data.header); // шапка таблицы
     console.log(data.dashCenter); // средняя линия
     
@@ -31,5 +44,4 @@ export const print = (
     });
 
     console.log(data.dashBottom); // нижняя линия
-
 }

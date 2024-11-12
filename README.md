@@ -34,10 +34,12 @@ consoleTable(dataMock, {...Props settings});
 ## Props settings
 
 | Name | type | Description |
-|--|--|--|
-| selectionType | string / literal | Header highlight type selection |
+:---| :--- | :---
+| selectionTitle | string \| undifined | Header highlight type selection |
 | isShowLine | boolean | Table with or without data separation lines. |
-| sing | string / literal | Icon selection for the table |
+| sing | string \| undifined | Icon selection for the table |
+| title | string \| undifined | Table header
+| selectionTitle | string \| undifined | Title highlight type selection
 
 >By default, without a settings object.
 
@@ -70,6 +72,22 @@ consoleTable(dataMock, {selectionType: 'text_yellow', isShowLine: true, sing: 'r
 ```
 
 <img src="./img/4.JPG" alt="Описание изображения" width="400" >
+
+>Table with highlighted header, highlighted top row, data separation lines, and an icon.
+
+```typescript
+consoleTable(dataMock, 
+    {
+        title: 'Table Day', 
+        sing: 'rocket', 
+        selectionTitle: 'background_green', 
+        selectionHeader: 'background_magenta', 
+        isShowLine: true
+    }
+);
+```
+
+<img src="./img/7.JPG" alt="Описание изображения" width="400" >
 
 
 

@@ -12,7 +12,7 @@ export const consoleTable = <T extends object>(
     data?: T[], 
     options?: IOptions
 ) => {
-
+    
     if(!data) return console.log('31m%s0m', 'No data available for the table.');
 
     const {
@@ -20,6 +20,7 @@ export const consoleTable = <T extends object>(
         dashUp,
         dashCenter,
         dashBottom, 
+        dashIfExistTitle,
         columnLength
     } = formation(data, options);
 
@@ -27,6 +28,7 @@ export const consoleTable = <T extends object>(
         dashUp, 
         dashCenter,
         dashBottom,
+        dashIfExistTitle,
         data, 
         header, 
         columnLength, 

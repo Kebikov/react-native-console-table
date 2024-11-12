@@ -5,8 +5,10 @@ import {selectionTypeObj, signObj} from '../modules/dataForTable';
  */
 export interface IOptions {
     sing?:  keyof typeof signObj;
-    selectionType?: keyof typeof selectionTypeObj;
+    selectionHeader?: keyof typeof selectionTypeObj;
     isShowLine?: boolean;
+    title?: string; 
+    selectionTitle?: keyof typeof selectionTypeObj;
 }
 
 export type TObj = {
@@ -22,6 +24,7 @@ export interface IPrint {
     dashUp: string;
     dashCenter: string;
     dashBottom: string;
+    dashIfExistTitle: string;
     header: string;
     data: TObj[];
     columnLength: IlengthColumn[];
@@ -33,6 +36,7 @@ export interface IFormation {
     dashUp: string;
     dashCenter: string;
     dashBottom: string;
+    dashIfExistTitle: string;
     header: string;
 }
 

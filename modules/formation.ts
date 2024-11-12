@@ -27,20 +27,22 @@ export const formation = (
      * `Все ключи обьекта.`
      */
     const keysObj: string[] = Object.keys(arrObj[0]);
-
     
     keysObj.forEach(key => {
         const values: (string | number)[] = [];
         arrObj.forEach(item => {
             values.push(item[key]);
         });
+        /**
+         * `Максимальная длинна колонки, определенная по максимальной длинне значения находяшегося в колонке.`
+         */
         const maxLengthColumn = Math.max(key.length, ...values.map(value => String(value).length)); 
         columnLength = [...columnLength, {key, length: maxLengthColumn}];
     });
     /**
      *  `Разделительная линия таблицы.`
      */
-    const {dashUp, dashCenter, dashBottom} = copyDash(columnLength);
+    const {dashUp, dashCenter, dashBottom, dashIfExistTitle} = copyDash(columnLength);
     /**
      * `Шапка таблицы.`
      */
@@ -51,6 +53,7 @@ export const formation = (
         dashUp,
         dashCenter,
         dashBottom,
+        dashIfExistTitle,
         header
     }
 }
