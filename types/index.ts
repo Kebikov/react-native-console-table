@@ -4,11 +4,11 @@ import {selectionTypeObj, signObj} from '../modules/dataForTable';
  * `interface настроек отображения таблицы.`
  */
 export interface IOptions {
-    sing?:  keyof typeof signObj;
-    selectionHeader?: keyof typeof selectionTypeObj;
-    isShowLine?: boolean;
     title?: string; 
     selectionTitle?: keyof typeof selectionTypeObj;
+    selectionHeader?: keyof typeof selectionTypeObj;
+    isShowLine?: boolean;
+    sing?:  keyof typeof signObj;
 }
 
 export type TObj = {

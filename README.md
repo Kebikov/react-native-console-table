@@ -34,12 +34,16 @@ consoleTable(dataMock, {...Props settings});
 ## Props settings
 
 | Name | type | Description |
-:---| :--- | :---
-| selectionTitle | string \| undifined | Header highlight type selection |
-| isShowLine | boolean | Table with or without data separation lines. |
-| sing | string \| undifined | Icon selection for the table |
-| title | string \| undifined | Table header
-| selectionTitle | string \| undifined | Title highlight type selection
+|:---| :--- | :---|
+| title | string \| undifined | Title for table
+| selectionTitle | string \| undifined | Title highlight type selection.
+| selectionHeader | string \| undifined | Header highlight type selection.
+| isShowLine | boolean | Table with or without data separation lines. 
+| sing | string \| undifined | Icon selection for the table 
+
+---
+
+### Default
 
 >By default, without a settings object.
 
@@ -49,36 +53,52 @@ consoleTable(dataMock);
 
 <img src="./img/1.jpg" alt="Описание изображения" width="400" >
 
+---
+
+### Property "selectionHeader"
+
 >Table display with highlighted header.
 
 ```typescript
-consoleTable(dataMock, {selectionType: 'background_magenta'});
+consoleTable(dataMock, {selectionHeader: 'background_magenta'});
 ```
 
 <img src="./img/2.JPG" alt="Описание изображения" width="400" >
 
+---
+
+### Property "isShowLine"
+
 >Table display with highlighted header and data separation lines.
 
 ```typescript
-consoleTable(dataMock, {selectionType: 'background_magenta', isShowLine: true});
+consoleTable(dataMock, {selectionHeader: 'background_magenta', isShowLine: true});
 ```
 
 <img src="./img/3.JPG" alt="Описание изображения" width="400" >
 
+---
+
+### Property "sing"
+
 >Table display with yellow headers, data separation lines, and an icon.
 
 ```typescript
-consoleTable(dataMock, {selectionType: 'text_yellow', isShowLine: true, sing: 'rocket'});
+consoleTable(dataMock, {selectionHeader: 'text_yellow', isShowLine: true, sing: 'rocket'});
 ```
 
 <img src="./img/4.JPG" alt="Описание изображения" width="400" >
+
+---
+
+### Property "title"
 
 >Table with highlighted header, highlighted top row, data separation lines, and an icon.
 
 ```typescript
 consoleTable(dataMock, 
     {
-        title: 'Table Day', 
+        title: 'Table User', 
         sing: 'rocket', 
         selectionTitle: 'background_green', 
         selectionHeader: 'background_magenta', 
@@ -87,7 +107,7 @@ consoleTable(dataMock,
 );
 ```
 
-<img src="./img/7.JPG" alt="Описание изображения" width="400" >
+<img src="./img/8.JPG" alt="Описание изображения" width="400" >
 
 
 
