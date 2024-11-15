@@ -12,6 +12,8 @@ export const print = (
     data: IPrint
 ) => {
 
+    let fullTable: string = '\n';
+
     let sign: string = 
         data?.options?.sing ? signObj[data.options.sing] 
         : 
@@ -25,23 +27,24 @@ export const print = (
 
     if(titleObj && titleObj.title && titleObj.dashTitle) {
         const headerTitle = data?.options?.sing ? titleObj.dashTitle.slice(2) : titleObj.dashTitle;
-
-        console.log(sign + headerTitle); // верхняя линия Title
-        console.log(titleObj.title); // Title
-        console.log(data.dashIfExistTitle); // линия, если есть Title
+        fullTable += sign + headerTitle + '\n'; // + верхняя линия Title
+        fullTable += titleObj.title + '\n'; // + Title
+        fullTable += data.dashIfExistTitle + '\n'; // + линия, если есть Title
     } else {
-        console.log(sign + headerLine); // верхняя линия
+        fullTable += sign + headerLine + '\n'; // + верхняя линия
     }
 
-    console.log(data.header); // шапка таблицы
-    console.log(data.dashCenter); // средняя линия
+    fullTable += data.header + '\n'; // + шапка таблицы
+    fullTable += data.dashCenter + '\n'; // + средняя линия
     
     // Строки данных
     data.data.forEach((itemObj, index) => {
         const lineForLog = formationLine(data.columnLength, itemObj);
-        console.log(lineForLog); // строка с данными
-        if(index !== data.data.length - 1 && data?.options?.isShowLine) console.log(data.dashCenter);
+        fullTable += lineForLog + '\n'; // + строка с данными
+        if(index !== data.data.length - 1 && data?.options?.isShowLine) fullTable += data.dashCenter + '\n'; 
     });
 
-    console.log(data.dashBottom); // нижняя линия
+    fullTable += data.dashBottom + '\n'; // + нижняя линия
+
+    console.log(fullTable);
 }
