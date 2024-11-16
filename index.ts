@@ -13,7 +13,7 @@ export const consoleTable = <T extends object>(
     options?: IOptions
 ) => {
     
-    if(!data) return console.log('31m%s0m', 'No data available for the table.');
+    if(!data || !Array.isArray(data) || data.length === 0) return console.log('\x1b[41m%s\x1b[0m', 'No data available for the table.');
 
     const {
         header, 
