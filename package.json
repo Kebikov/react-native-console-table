@@ -1,6 +1,6 @@
 {
   "name": "react-native-console-table",
-  "version": "0.1.9",
+  "version": "0.2.9",
   "description": "Display an array of objects (with the same interface) as a table in the terminal.",
   "main": "index.ts",
   "types": "index.d.ts",

@@ -3,12 +3,13 @@ import {selectionTypeObj, signObj} from '../modules/dataForTable';
 /**
  * `interface настроек отображения таблицы.`
  */
-export interface IOptions {
+export interface IOptions<T> {
     title?: string; 
     selectionTitle?: keyof typeof selectionTypeObj;
     selectionHeader?: keyof typeof selectionTypeObj;
     isShowLine?: boolean;
     sing?:  keyof typeof signObj;
+    filter?: Array<keyof T>
 }
 
 export type TObj = {
@@ -20,7 +21,7 @@ export interface IlengthColumn {
     length: number;
 }
 
-export interface IPrint {
+export interface IPrint<T> {
     dashUp: string;
     dashCenter: string;
     dashBottom: string;
@@ -28,7 +29,7 @@ export interface IPrint {
     header: string;
     data: TObj[];
     columnLength: IlengthColumn[];
-    options?: IOptions;
+    options?: IOptions<T>;
 }
 
 export interface IFormation {
@@ -44,4 +45,8 @@ export interface IDashOption {
     start: string;
     gaps: string;
     end: string;
+}
+
+export type TDataObject<T> = {
+    [key in keyof T]: string | number
 }

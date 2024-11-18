@@ -19,7 +19,14 @@
 ```typescript
 import { consoleTable } from 'react-native-console-table';
 
-const dataMock: {name: string, age: number, country: string, job: string}[] = [
+interface IDataMock {
+    name: string; 
+    age: number; 
+    country: string; 
+    job: string;
+}
+
+const dataMock: IDataMock[] = [
     { name: 'Alice', age: 25, country: 'USA', job: 'Developer' },
     { name: 'Bob', age: 30, country: 'UK', job: 'Driver' },
     { name: 'Charlie', age: 28, country: 'Canada', job: 'Engineer' },
@@ -35,11 +42,12 @@ consoleTable(dataMock, {...Props settings});
 
 | Name | type | Description |
 |:---| :--- | :---|
-| title | string \| undifined | Title for table
-| selectionTitle | string \| undifined | Title highlight type selection.
-| selectionHeader | string \| undifined | Header highlight type selection.
-| isShowLine | boolean | Table with or without data separation lines. 
-| sing | string \| undifined | Icon selection for the table 
+| [title](#property-title-and-selectiontitle)| string \| undifined | Title for table.
+| [selectionTitle](#property-title-and-selectiontitle) | string \| undifined | Title highlight type selection.
+| [selectionHeader](#property-selectionheader) | string \| undifined | Header highlight type selection.
+| [isShowLine](#property-isshowline) | boolean | Table with or without data separation lines. 
+| [sing](#property-sing) | string \| undifined | Icon selection for the table. 
+| [filter](#property-filter) | string[] \| undifined  | An array of object keys for filtering and excluding columns with these keys from the table.
 
 ---
 
@@ -55,7 +63,7 @@ consoleTable(dataMock);
 
 ---
 
-### Property "selectionHeader"
+### Property SelectionHeader
 
 >Table display with highlighted header.
 
@@ -67,7 +75,7 @@ consoleTable(dataMock, {selectionHeader: 'background_magenta'});
 
 ---
 
-### Property "isShowLine"
+### Property IsShowLine
 
 >Table display with highlighted header and data separation lines.
 
@@ -79,7 +87,7 @@ consoleTable(dataMock, {selectionHeader: 'background_magenta', isShowLine: true}
 
 ---
 
-### Property "sing"
+### Property Sing
 
 >Table display with yellow headers, data separation lines, and an icon.
 
@@ -91,7 +99,7 @@ consoleTable(dataMock, {selectionHeader: 'text_yellow', isShowLine: true, sing: 
 
 ---
 
-### Property "title"
+### Property Title and SelectionTitle
 
 >Table with highlighted header, highlighted top row, data separation lines, and an icon.
 
@@ -109,6 +117,22 @@ consoleTable(dataMock,
 
 <img src="./img/8.JPG" alt="Описание изображения" width="400" >
 
+---
 
+### Property Filter
 
+>You can pass keys as an array to exclude specific columns from the table displayed in the console.
 
+```typescript
+consoleTable(dataMock, 
+    {
+        title: 'Table User', 
+        sing: 'box', 
+        selectionTitle: 'background_green', 
+        selectionHeader: 'background_magenta', 
+        filter: ['job', 'country']
+    }
+);
+```
+
+<img src="./img/9.JPG" alt="Описание изображения" width="190" >

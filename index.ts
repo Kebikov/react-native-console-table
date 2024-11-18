@@ -1,6 +1,7 @@
-import { IOptions } from './types';
+import { IOptions, TDataObject } from './types';
 import { formation } from './modules/formation'
 import { print } from './modules/print';
+import { filterOmit } from './modules/filterOmit';
 
 
 /**
@@ -9,10 +10,11 @@ import { print } from './modules/print';
  * @param options Object settings 
  */
 export const consoleTable = <T extends object>(
-    data?: T[], 
-    options?: IOptions
+    data?: Array<TDataObject<T>>, 
+    options?: IOptions<T>
 ) => {
-    
+    // Фильтр данных, если он передан.
+    if(options && options.filter && data) data = filterOmit(data, options.filter);
     if(!data || !Array.isArray(data) || data.length === 0) return console.log('\x1b[41m%s\x1b[0m', 'No data available for the table.');
 
     const {
